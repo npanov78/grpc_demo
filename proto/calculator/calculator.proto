@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package grpc_server;
+
+option go_package = "myserver.calculator.v1";
+
+service Calculator{
+  rpc Add(AddRequest) returns (AddResponse);
+}
+
+message AddRequest{
+  int32 Num1 = 1;
+  int32 Num2 = 2;
+}
+
+message AddResponse{
+  int32 Result = 1;
+}
